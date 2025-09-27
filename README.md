@@ -1,3 +1,5 @@
+Dotfiles for a orange/grey cinnamon desktop
+
 ## requirements
 
 ### desklets
