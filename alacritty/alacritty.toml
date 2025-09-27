@@ -1,0 +1,19 @@
+import = [
+    "~/.config/alacritty/themes/themes/just_orange.toml"
+]
+
+[window]
+opacity = 0.9
+padding = { x = 15, y = 15 }
+dynamic_padding = true
+title = "Alacritty"
+dynamic_title = false
+
+[cursor]
+style = { shape = "Beam", blinking = "On"}
+
+[shell]
+program = "/bin/zsh"
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
