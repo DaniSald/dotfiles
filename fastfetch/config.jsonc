@@ -4,7 +4,7 @@
     "type": "small",
     "source": "",
     "color": {
-      "1": "",
+      "1": "#00ff00",
       "2": "",
       "3": "",
       "4": "",
@@ -36,7 +36,7 @@
     "showErrors": false,
     "disableLinewrap": true,
     "hideCursor": false,
-    "separator": ": ",
+    "separator": "",
     "color": {
       "keys": "",
       "title": "",
@@ -50,12 +50,12 @@
     },
     "size": {
       "maxPrefix": "YB",
-      "binaryPrefix": "iec",
+      "binaryPrefix": "jedec",
       "ndigits": 2,
       "spaceBeforeUnit": "default"
     },
     "temp": {
-      "unit": "D",
+      "unit": "C",
       "ndigits": 1,
       "color": {
         "green": "32",
@@ -110,7 +110,7 @@
       "spaceBeforeUnit": "default"
     },
     "constants": [
-      "──────────────────────"
+      "───────────────────"
     ]
   },
   "general": {
@@ -123,7 +123,7 @@
   "modules": [
     {
       "type": "title",
-      "format": "                           {user-name-colored}{at-symbol-colored}{host-name-colored}",
+      "format": "                        {user-name-colored}{at-symbol-colored}{host-name-colored}",
       "key": " ",
       "keyIcon": "",
       "fqdn": false,
@@ -134,12 +134,6 @@
       }
     },
     "break",
-    // {
-    //   "type": "separator",
-    //   "string": "-",
-    //   "outputColor": "",
-    //   "times": 0
-    // },
     {
       "type": "custom",
       "format": "{#red}┌{$1} {#1}Informações do Sistema{#}{#red} {$1}┐"
@@ -147,81 +141,34 @@
     "break",
     {
       "type": "os",
-      "keyIcon": ""
+      "key": "SO          ",
+      "keyIcon": "",
+      "outputColor": "blue",
+      "keyColor": "blue"
     },
     {
       "type": "host",
-      "keyIcon": "󰌢"
+      "key": "PC          ",
+      "format": "{family}",
+      "keyIcon": "󰌢",
+      "outputColor": "blue",
+      "keyColor": "blue"
     },
     {
       "type": "kernel",
-      "keyIcon": ""
+      "key": "kernel      ",
+      "keyIcon": "",
+      "outputColor": "blue",
+      "keyColor": "blue"
     },
-    {
-      "type": "uptime",
-      "keyIcon": ""
-    },
-    {
-      "type": "packages",
-      "keyIcon": "󰏖",
-      "disabled": [
-        "winget"
-      ],
-      "combined": false
-    },
-    {
-      "type": "shell",
-      "keyIcon": ""
-    },
-    {
-      "type": "display",
-      "keyIcon": "󰍹",
-      "compactType": "none",
-      "preciseRefreshRate": false,
-      "order": "desc"
-    },
-    {
-      "type": "de",
-      "keyIcon": "",
-      "slowVersionDetection": false
-    },
-    {
-      "type": "wm",
-      "keyIcon": "",
-      "detectPlugin": false
-    },
-    {
-      "type": "wmtheme",
-      "keyIcon": "󰓸"
-    },
-    {
-      "type": "theme",
-      "keyIcon": "󰉼"
-    },
-    {
-      "type": "icons",
-      "keyIcon": ""
-    },
-    {
-      "type": "font",
-      "keyIcon": ""
-    },
-    {
-      "type": "cursor",
-      "keyIcon": "󰆿"
-    },
-    {
-      "type": "terminal",
-      "keyIcon": ""
-    },
-    {
-      "type": "terminalfont",
-      "keyIcon": ""
-    },
+    "break",
     {
       "type": "cpu",
       "keyIcon": "",
-      "temp": false,
+      "temp": true,
+      "key": "CPU         ",
+      "keyColor": "red",
+      "outputColor": "red",
       "showPeCoreCount": false
     },
     {
@@ -229,8 +176,11 @@
       "keyIcon": "󰾲",
       "driverSpecific": false,
       "detectionMethod": "pci",
-      "temp": false,
+      "temp": true,
       "hideType": "none",
+      "key": "GPU         ",
+      "outputColor": "red",
+      "keyColor": "red",
       "percent": {
         "green": 50,
         "yellow": 80,
@@ -240,6 +190,9 @@
     {
       "type": "memory",
       "keyIcon": "",
+      "key": "RAM         ",
+      "outputColor": "red",
+      "keyColor": "red",
       "percent": {
         "green": 50,
         "yellow": 80,
@@ -247,36 +200,55 @@
       }
     },
     {
-      "type": "swap",
-      "percent": {
-        "green": 50,
-        "yellow": 80,
-        "type": 0
-      },
-      "keyIcon": "󰓡",
-      "separate": false
+      "type": "processes",
+      "keyColor": "red",
+      "outputColor": "red",
+      "key": "Processos   "
+    },
+    "break",
+    {
+      "type": "terminal",
+      "keyColor": "magenta",
+      "outputColor": "magenta",
+      "key": "Terminal    ",
+      "keyIcon": ""
     },
     {
-      "type": "disk",
-      "keyIcon": "",
-      "showRegular": true,
-      "showExternal": true,
-      "showHidden": false,
-      "showSubvolumes": false,
-      "showReadOnly": true,
-      "showUnknown": false,
-      "folders": "",
-      "hideFolders": "/efi:/boot:/boot/efi:/boot/firmware",
-      "hideFS": "",
-      "useAvailable": false,
-      "percent": {
-        "green": 50,
-        "yellow": 80,
-        "type": 0
-      }
+      "type": "shell",
+      "key": "Shell       ",
+      "keyColor": "magenta",
+      "outputColor": "magenta",
+      "keyIcon": ""
     },
+    {
+      "type": "de",
+      "key": "DE          ",
+      "keyColor": "magenta",
+      "outputColor": "magenta",
+      "keyIcon": "",
+      "slowVersionDetection": false
+    },
+    "break",
+    {
+      "type": "theme",
+      "key": "Tema        ",
+      "keyColor": "yellow",
+      "outputColor": "yellow",
+      "keyIcon": "󰉼"
+    },
+    {
+      "type": "icons",
+      "key": "Ícones      ",
+      "keyColor": "yellow",
+      "outputColor": "yellow",
+      "keyIcon": ""
+    },
+    "break",
     {
       "type": "localip",
+      "key": "IP Local    ",
+      "keyColor": "cyan",
+      "outputColor": "cyan",
       "keyIcon": "󰩟",
       "showIpv4": true,
       "showIpv6": false,
@@ -291,28 +263,10 @@
       "showAllIps": false,
       "namePrefix": ""
     },
-    {
-      "type": "battery",
-      "keyIcon": "",
-      "temp": false,
-      "percent": {
-        "green": 50,
-        "yellow": 20,
-        "type": 0
-      }
-    },
-    {
-      "type": "poweradapter",
-      "keyIcon": "󰚥"
-    },
-    {
-      "type": "locale",
-      "keyIcon": ""
-    },
     "break",
     {
       "type": "custom",
-      "format": "{#red}└{$1}────────────────────{$1}┘"
+      "format": "{#red}└{$1}────────────────────────{$1}┘"
     },
     "break",
     {
