@@ -1,6 +1,30 @@
-import = [
-    "~/.config/alacritty/themes/themes/just_orange.toml"
-]
+[colors.primary]
+background = "#272822"
+foreground = "#f78355"
+
+[colors.cursor]
+text   = '#fafafa'
+cursor = '#f9f8f5'
+
+[colors.normal]
+black = "#272822"
+red = "#f92672"
+green = "#f44d0b"
+yellow = "#f4bf75"
+blue = "#0070ff"
+magenta = "#ae81ff"
+cyan = "#a1efe4"
+white = "#f8f8f2"
+
+[colors.bright]
+black = "#75715e"
+red = "#f92672"
+green = "#f44d0b"
+yellow = "#f4bf75"
+blue = "#0070ff"
+magenta = "#ae81ff"
+cyan = "#a1efe4"
+white = "#f9f8f5"
 
 [window]
 opacity = 0.9
