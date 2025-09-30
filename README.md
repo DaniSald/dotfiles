@@ -26,3 +26,4 @@ Dotfiles for a orange/grey cinnamon desktop
 - [oh my zsh](https://ohmyz.sh/)
 - [alacritty](https://alacritty.org/)
 - [tmux](https://github.com/tmux/tmux/wiki)
+- [fastfetch](https://github.com/fastfetch-cli/fastfetch)
