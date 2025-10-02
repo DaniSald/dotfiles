@@ -5,6 +5,9 @@
 
 <img width="973" height="727" alt="Captura de tela de 2025-09-30 00-07-02" src="https://github.com/user-attachments/assets/8f2a3ed4-67a9-473c-86b3-87929de411dc" />
 
+## Requirements
+Any [nerd font](https://www.nerdfonts.com/)
+
 ## Install
 1. Copy `kis.zsh-theme` to `~/.oh-my-zsh/themes/`
 2. Set the theme on `~/.zshrc`
