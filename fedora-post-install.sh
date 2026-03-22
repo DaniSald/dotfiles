@@ -9,7 +9,9 @@ https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E 
 echo
 echo "copy dotfiles"
 echo
-cp ./tmux/tmux.conf ~/
+# tmux
+mkdir ~/.config/tmux
+cp ./tmux/tmux.conf ~/.config/tmux
 
 # install development tools
 echo
@@ -78,6 +80,15 @@ echo
 echo "final upgrade"
 echo
 sudo dnf upgrade -y
+
+# set custom prompt
+echo
+echo "set custom prompt"
+echo
+if ! grep -q "PS1" ~/.bashrc; then
+	cat custom-prompt.txt >> ~/.bashrc
+fi
+source ~/.bashrc
 
 # reboot
 echo
