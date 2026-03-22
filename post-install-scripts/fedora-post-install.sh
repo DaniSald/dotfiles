@@ -28,7 +28,6 @@ gnome-extensions-app \
 gnome-shell-extension-user-theme \
 gnome-themes-extra \
 tmux \
-brave-browser \
 gtk-murrine-engine \
 sassc \
 flatpak \
@@ -36,6 +35,8 @@ discord \
 transmission \
 vlc \
 ffmpeg --skip-unavailable --allowerasing -y
+
+curl -fsS https://dl.brave.com/install.sh | sh
 
 sudo flatpak install -y flathub com.mattjakeman.ExtensionManager
 
@@ -53,7 +54,7 @@ echo "install orchis-theme"
 echo
 git clone https://github.com/vinceliuice/Orchis-theme.git ./orchis-theme
 cd orchis-theme
-./install.sh -t orange -c dark --tweaks macos --tweaks primary --tweaks dock
+./install.sh -t orange -c dark --tweaks macos --tweaks primary --tweaks dock -l
 sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override --filesystem=xdg-config/gtk-4.0
 cd ..
 sudo rm -rf orchis-theme
