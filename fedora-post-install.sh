@@ -5,6 +5,12 @@ echo
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
 https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 
+# copy dotfiles
+echo
+echo "copy dotfiles"
+echo
+cp ./tmux/tmux.conf ~/
+
 # install development tools
 echo
 echo "install development tools"
@@ -19,6 +25,7 @@ sudo dnf install gnome-tweaks \
 gnome-extensions-app \
 gnome-shell-extension-user-theme \
 gnome-themes-extra \
+tmux \
 gtk-murrine-engine \
 sassc \
 flatpak \
@@ -48,6 +55,23 @@ cd orchis-theme
 sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override --filesystem=xdg-config/gtk-4.0
 cd ..
 sudo rm -rf orchis-theme
+
+# install tmux tpm
+echo
+echo "install tmux tpm"
+echo
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# install nerd font
+echo
+echo "install nerd font"
+echo
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
+unzip JetBrainsMono.zip -d ./nerdfont
+sudo mkdir -p /usr/share/fonts/jetbrains-mono-nerd-font
+sudo cp -R ./nerdfont/JetBrainsMonoNerdFont-*.ttf /usr/share/fonts/jetbrains-mono-nerd-font
+sudo fc-cache -fv
+sudo rm -rf nerdfont JetBrainsMono.zip
 
 # final upgrade
 echo
