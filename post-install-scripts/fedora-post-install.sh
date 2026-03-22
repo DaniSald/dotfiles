@@ -11,7 +11,7 @@ echo "copy dotfiles"
 echo
 # tmux
 mkdir ~/.config/tmux
-cp ./tmux/tmux.conf ~/.config/tmux
+cp ../tmux/tmux.conf ~/.config/tmux
 
 # install development tools
 echo
