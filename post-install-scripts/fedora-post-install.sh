@@ -31,7 +31,6 @@ tmux \
 gtk-murrine-engine \
 sassc \
 flatpak \
-brave-browser \
 discord \
 transmission \
 vlc \
