@@ -28,13 +28,14 @@ gnome-extensions-app \
 gnome-shell-extension-user-theme \
 gnome-themes-extra \
 tmux \
+brave-browser \
 gtk-murrine-engine \
 sassc \
 flatpak \
 discord \
 transmission \
 vlc \
-ffmpeg --allowerasing -y
+ffmpeg --skip-unavailable --allowerasing -y
 
 sudo flatpak install -y flathub com.mattjakeman.ExtensionManager
 
